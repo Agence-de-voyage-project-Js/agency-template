@@ -4,8 +4,6 @@ const formLogin = document.querySelector('form')
 
 
 
-
-
 formLogin.addEventListener('submit' , (e) =>{
     e.preventDefault();
 var userInfo = users.find(user => user.email === formLogin.email1.value && user.password === formLogin.password1.value)
