@@ -1,5 +1,6 @@
 const form = document.querySelector("form");
 const ajoutVol = document.querySelector(".ajoutVol");
+const vols = JSON.parse(localStorage.getItem('vols')) || []
 
 ajoutVol.addEventListener("click", (e) => {
   e.preventDefault();
@@ -11,10 +12,10 @@ ajoutVol.addEventListener("click", (e) => {
 
   sieges = document.getElementById("sieges");
   dataList = document.getElementById("defaultNumbers");
-  // const nbrSieges = sieges.list.options[sieges.selectedIndex].value;
+  // const nbrSieges = sieges.list.options[sieges.selectedIndex].value;zzz
   arrivee = document.getElementById("arrivee");
   arriveeSelection = arrivee.options[arrivee.selectedIndex].text;
-  // console.log(sieges.list.options[1].value);
+
   hVol = document.getElementById("heureVol");
   hVoldepart = hVol.value;
   hVola = document.getElementById("heureVolarrivee");
@@ -28,5 +29,7 @@ ajoutVol.addEventListener("click", (e) => {
     arriveeSelection,
     departSelection,
   };
-  console.log(vol);
+
+  vols.push(vol);
+  localStorage.setItem('vols',JSON.stringify(vols));
 });
