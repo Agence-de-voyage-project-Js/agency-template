@@ -1,6 +1,6 @@
 const form = document.querySelector("form");
 const ajoutVol = document.querySelector(".ajoutVol");
-const vols = JSON.parse(localStorage.getItem('vols')) || []
+const vols = JSON.parse(localStorage.getItem("vols")) || [];
 
 ajoutVol.addEventListener("click", (e) => {
   e.preventDefault();
@@ -11,8 +11,7 @@ ajoutVol.addEventListener("click", (e) => {
   typeAvion = avion.options[avion.selectedIndex].text;
 
   sieges = document.getElementById("sieges");
-  dataList = document.getElementById("defaultNumbers");
-  // const nbrSieges = sieges.list.options[sieges.selectedIndex].value;zzz
+  arriveeSelection = arrivee.options[arrivee.selectedIndex].text;
   arrivee = document.getElementById("arrivee");
   arriveeSelection = arrivee.options[arrivee.selectedIndex].text;
 
@@ -20,7 +19,8 @@ ajoutVol.addEventListener("click", (e) => {
   hVoldepart = hVol.value;
   hVola = document.getElementById("heureVolarrivee");
   hVolarrivee = hVola.value;
-
+  nbreSieges = document.getElementById("nbreSieges");
+  nbrSieges = nbreSieges.options[nbreSieges.selectedIndex].value;
   const vol = {
     numVol,
     typeAvion,
@@ -28,8 +28,20 @@ ajoutVol.addEventListener("click", (e) => {
     hVolarrivee,
     arriveeSelection,
     departSelection,
+    nbrSieges,
   };
+  if (
+    numVol == "" ||
+    typeAvion == "" ||
+    hVoldepart == "" ||
+    hVolarrivee == "" ||
+    arriveeSelection == "" ||
+    departSelection == "" ||
+    nbrSieges == ""
+  ) {
+    alert("merci de verifier la saisie de tous les champs");
+  }
 
   vols.push(vol);
-  localStorage.setItem('vols',JSON.stringify(vols));
+  localStorage.setItem("vols", JSON.stringify(vols));
 });
