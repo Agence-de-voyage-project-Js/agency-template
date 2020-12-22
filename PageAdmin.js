@@ -1,5 +1,6 @@
 const form = document.querySelector("form");
 const ajoutVol = document.querySelector(".ajoutVol");
+const vols = JSON.parse(localStorage.getItem("vols")) || [];
 
 ajoutVol.addEventListener("click", (e) => {
   e.preventDefault();
@@ -10,8 +11,10 @@ ajoutVol.addEventListener("click", (e) => {
   typeAvion = avion.options[avion.selectedIndex].text;
 
   sieges = document.getElementById("sieges");
+  arriveeSelection = arrivee.options[arrivee.selectedIndex].text;
   arrivee = document.getElementById("arrivee");
   arriveeSelection = arrivee.options[arrivee.selectedIndex].text;
+
   hVol = document.getElementById("heureVol");
   hVoldepart = hVol.value;
   hVola = document.getElementById("heureVolarrivee");
@@ -38,4 +41,7 @@ ajoutVol.addEventListener("click", (e) => {
   ) {
     alert("merci de verifier la saisie de tous les champs");
   }
+
+  vols.push(vol);
+  localStorage.setItem("vols", JSON.stringify(vols));
 });
