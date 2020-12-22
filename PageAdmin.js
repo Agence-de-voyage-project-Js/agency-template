@@ -10,16 +10,14 @@ ajoutVol.addEventListener("click", (e) => {
   typeAvion = avion.options[avion.selectedIndex].text;
 
   sieges = document.getElementById("sieges");
-  dataList = document.getElementById("defaultNumbers");
-  // const nbrSieges = sieges.list.options[sieges.selectedIndex].value;
   arrivee = document.getElementById("arrivee");
   arriveeSelection = arrivee.options[arrivee.selectedIndex].text;
-  // console.log(sieges.list.options[1].value);
   hVol = document.getElementById("heureVol");
   hVoldepart = hVol.value;
   hVola = document.getElementById("heureVolarrivee");
   hVolarrivee = hVola.value;
-
+  nbreSieges = document.getElementById("nbreSieges");
+  nbrSieges = nbreSieges.options[nbreSieges.selectedIndex].value;
   const vol = {
     numVol,
     typeAvion,
@@ -27,6 +25,17 @@ ajoutVol.addEventListener("click", (e) => {
     hVolarrivee,
     arriveeSelection,
     departSelection,
+    nbrSieges,
   };
-  console.log(vol);
+  if (
+    numVol == "" ||
+    typeAvion == "" ||
+    hVoldepart == "" ||
+    hVolarrivee == "" ||
+    arriveeSelection == "" ||
+    departSelection == "" ||
+    nbrSieges == ""
+  ) {
+    alert("merci de verifier la saisie de tous les champs");
+  }
 });
