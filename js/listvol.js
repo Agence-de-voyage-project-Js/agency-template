@@ -6,10 +6,19 @@ function affichVol(){
       const ligne = document.createElement('tr');
       const i=index+1
         data='';
+        // parsing date
+        var date1 = new Date(vol.hVoldepart)
+        var dateDep = date1.toLocaleDateString();
+        var timeDep = date1.toLocaleTimeString();
+
+        var date2 = new Date(vol.hVolarrivee)
+        var dateAr = date2.toLocaleDateString();
+        var timeAr = date2.toLocaleTimeString();
+
         data += '<td>' + vol.numVol + '</td>';
-        data += '<td>' + vol.hVoldepart + '</td>';
+        data += '<td>' + dateDep + '  ' + timeDep + '</td>';
         data += '<td>' + vol.departSelection + '</td>';
-        data += '<td>' + vol.hVolarrivee + '</td>';
+        data += '<td>' + dateAr + '  ' + timeAr + '</td>';
         data += '<td>' + vol.arriveeSelection + '</td>'
         data += '<td>'+
         '<button class="btn btn-info text-white"><i class="fa fa-edit text-white"></i> Edit</button>'
