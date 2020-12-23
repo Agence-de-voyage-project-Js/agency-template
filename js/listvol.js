@@ -1,22 +1,35 @@
 function affichVol(){
   const vols = JSON.parse(localStorage.getItem('vols')) || []
   const infovol = document.getElementById('vol')
-  data='';
   if (vols.length > 0) {
-      for (i = 0; i < vols.length; i++) {
-        data += '<tr>';
-        data += '<td>' + vols[i].numVol + '</td>';
-        data += '<td>' + 'DEPART' + '</td>'
-        data += '<td>' + vols[i].hVoldepart + '</td>';
-        data += '<td>' + vols[i].departSelection + '</td>';
-        data += '<td>' + 'ARRIVEE' + '</td>'
-        data += '<td>' + vols[i].hVolarrivee + '</td>';
-        data += '<td>' + vols[i].arriveeSelection + '</td>'
-        data += '<td><i class="fas fa-trash delete">Edit</i></td>';
-        data += '<td><i class="fas fa-pen edit">Delete</i></td>';
-        data += '</tr>';
-      }
+    vols.forEach((vol, index) => {
+      const ligne = document.createElement('tr');
+      const i=index+1
+        data='';
+        // parsing date
+        var date1 = new Date(vol.hVoldepart)
+        var dateDep = date1.toLocaleDateString();
+        var timeDep = date1.toLocaleTimeString();
+
+        var date2 = new Date(vol.hVolarrivee)
+        var dateAr = date2.toLocaleDateString();
+        var timeAr = date2.toLocaleTimeString();
+
+        data += '<td>' + vol.numVol + '</td>';
+        data += '<td>' + dateDep + '  ' + timeDep + '</td>';
+        data += '<td>' + vol.departSelection + '</td>';
+        data += '<td>' + dateAr + '  ' + timeAr + '</td>';
+        data += '<td>' + vol.arriveeSelection + '</td>'
+        data += '<td>'+
+        '<button class="btn btn-info text-white"><i class="fa fa-edit text-white"></i> Edit</button>'
+        +'<button class="btn btn-danger text-white"><i class="fa fa-trash text-white"> Delete</i></button>'
+        +'</td>';
+        
+        ligne.innerHTML = data;
+
+        infovol.appendChild(ligne)
+      });
     }
-    return infovol.innerHTML = data;
 }
-console.log(affichVol());
+
+affichVol();
