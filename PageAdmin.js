@@ -44,4 +44,6 @@ ajoutVol.addEventListener("click", (e) => {
 
   vols.push(vol);
   localStorage.setItem("vols", JSON.stringify(vols));
+  affichVol();
+
 });
