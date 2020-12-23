@@ -1,0 +1,46 @@
+.rating a {
+    float: right;
+    margin-top: 90px;
+    position: relative;
+    right: 80px;
+    color:slategray;
+    text-decoration: none;
+    font-size: 2em;
+    transition: color .4s;
+ }
+ .rating a:hover,
+ .rating a:focus,
+ .rating a:hover ~ a,
+ .rating a:focus ~ a {
+    color: orange;
+    cursor: pointer;
+ }
+ .bande{
+     background-color: #B587E8;
+     max-width: 100%;
+     max-height: 20%;
+ }
+ .card h6{
+     margin-right: 10px;
+ }
+ .line {
+    text-decoration: line-through;
+  }
+  .prix{
+      display: flex;
+      justify-content: space-between;
+      margin-left: 40px;
+      margin-top: 30px;
+  }
+  .duration{
+      color: white;
+      /* padding-left: 100px; */
+      text-align: center;
+      padding-left: 30px;
+      /* max-height: 50px;
+      min-height: 10px; */
+      display: inline-block;
+      color: black;
+      font-family: cursive;
+      font-size: large;
+  }
