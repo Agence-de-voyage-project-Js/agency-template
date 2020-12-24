@@ -22,7 +22,7 @@ function affichVol(){
         data += '<td>' + vol.arriveeSelection + '</td>'
         data += '<td>'+
         '<button class="btn btn-info text-white"><i class="fa fa-edit text-white"></i> Edit</button>'
-        +'<button class="btn btn-danger text-white"><i class="fa fa-trash text-white"> Delete</i></button>'
+        +'<button class="btn btn-danger text-white" onclick="deleteVol('+index+')"><i class="fa fa-trash text-white"> Delete</i></button>'
         +'</td>';
         
         ligne.innerHTML = data;
