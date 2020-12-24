@@ -2,9 +2,9 @@ function affichVol(){
   const vols = JSON.parse(localStorage.getItem('vols')) || []
   const infovol = document.getElementById('vol')
   if (vols.length > 0) {
+    infovol.innerHTML = "";
     vols.forEach((vol, index) => {
       const ligne = document.createElement('tr');
-      const i=index+1
         data='';
         // parsing date
         var date1 = new Date(vol.hVoldepart)
