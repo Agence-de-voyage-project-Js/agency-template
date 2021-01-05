@@ -5,12 +5,17 @@ function connected(){
     }
 }
 function connectedAdmin(){
-    const connectedUser = localStorage.getItem('connectedUser')
-    if (connectedUser!==null){
-        if (connectedUser.role !== 'admin'){
+    const Users = localStorage.getItem('users')
+    console.log(Users);
+    if (user!==null){
+        
+        if (users.role !== 'admin'){
+            console.log(users.role);
             location.href = 'login.html';
         }
-    }else {
+        
+    }
+    else {
         location.href='login.html';
     }
 }
