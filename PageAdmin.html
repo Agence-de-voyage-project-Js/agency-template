@@ -19,7 +19,12 @@
       href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700"
       rel="stylesheet"
     />
-
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+      integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="css/linearicons.css" />
     <link rel="stylesheet" href="css/owl.carousel.css" />
     <link rel="stylesheet" href="css/font-awesome.min.css" />
@@ -189,16 +194,139 @@
           </div>
         </div>
       </div>
-    </div><br><br>
+    </div>
+
+    <div
+      class="modal fade"
+      id="exampleModal2"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel2">Vol à modifier</h5>
+
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form action="nouveau vol">
+              <input
+                type="text"
+                placeholder="N° du vol"
+                class="form-control"
+                id="numVol2"
+                value=""
+              />
+              <br />
+              <select id="typeavion2" class="form-control" value="">
+                <option selected>Choisir votre type d'avion</option>
+                <option>Boeing 737</option>
+                <option>Boeing 767</option>
+                <option>A300</option>
+                <option>A320</option>
+                <option>A310</option>
+                <option>A320neo</option>
+                <option>A380</option>
+              </select>
+              <br />
+
+              <select id="nbreSieges2" class="form-control">
+                <option selected>Selectionnez le nombre de sieges de l'avion</option>
+
+                <option value="250">250</option>
+                <option value="300">300</option>
+                <option value="90">90</option>
+                <option value="150">150</option>
+                <option value="168">168</option>
+              </select>
+
+              <br />
+              <select id="depart2" class="form-control">
+                <option selected>Choisir l'aereport de depart</option>
+                <option>Tunis Carthage</option>
+                <option>Paris Charles de Gaulle</option>
+                <option>Amseterdam Schipol</option>
+                <option>Londres Heathrow</option>
+                <option>Istanbul Kamel Ataturk</option>
+                <option>Le caire</option>
+                <option>L'aereport international Bole</option>
+                <option>L'aereport international de Johannesburg</option>
+                <option>L'aereport international de Mykonos</option>
+                <option>L'aereport international de Mosco</option>
+                <option>L'aereport international de Kuala Lumpur</option>
+              </select>
+              <br />
+              <select id="arrivee2" class="form-control">
+                <option selected>Choisir l'aereport d'arrivée</option>
+                <option>Tunis Carthage</option>
+
+                <option>Paris Charles de Gaulle</option>
+                <option>Amseterdam Schipol</option>
+                <option>Londres Heathrow</option>
+                <option>Istanbul Kamel Ataturk</option>
+                <option>Le caire</option>
+                <option>L'aereport international Bole</option>
+                <option>L'aereport international de Johannesburg</option>
+                <option>L'aereport international de Mykonos</option>
+                <option>L'aereport international de Mosco</option>
+                <option>L'aereport international de Kuala Lumpur</option>
+              </select>
+              <br />
+              <div>
+                <label for="date">Donner la date et l'heure du depart du vol:</label>
+
+                <input
+                  id="heureVol2"
+                  type="datetime-local"
+                  name="heureVol"
+                  class="form-control"
+                  required
+                />
+                <span class="validity"></span>
+
+                <input type="hidden" class="form-control" id="timezone2" name="timezone" />
+              </div>
+              <div>
+                <label for="date">Donner la date et l'heure prévue d'arrivée:</label>
+                <input
+                  id="heureVolarrivee2"
+                  type="datetime-local"
+                  name="heureVol"
+                  class="form-control"
+                  required
+                />
+                <span class="validity"></span>
+                <input type="hidden" class="form-control" id="index" name="index" value="" />
+              </div>
+            </form>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+            <button
+              type="submit"
+              class="btn btn-primary ajoutVol"
+              data-dismiss="modal"
+              id="ajoutVol2"
+            >
+              Modifier le vol
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br /><br />
 
     <!-- Tableau des vols -->
-      <!-- WAFA -->
-      <table class="table table-bordered">
-        <tbody id="vol">
-
-        </tbody>
-     </table>
-     <!-- FIN WAFA -->
+    <!-- WAFA -->
+    <table class="table table-bordered">
+      <tbody id="vol"></tbody>
+    </table>
+    <!-- FIN WAFA -->
 
     <footer class="footer-area section-gap">
       <div class="container">
@@ -314,6 +442,7 @@
     <script src="PageAdmin.js"></script>
     <script src="js/listvol.js"></script>
     <script src="js/updateVol.js"></script>
+
     <script src="js/deleteVol.js"></script>
   </body>
 
