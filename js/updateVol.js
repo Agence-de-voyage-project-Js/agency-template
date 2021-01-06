@@ -1,6 +1,7 @@
 function updateVol() {
   const vols = JSON.parse(localStorage.getItem("vols")) || [];
-  const editsVol = document.querySelectorAll(".edit");
+  const editsVol = document.querySelectorAll("#edit");
+  console.log(editsVol);
   editsVol.forEach((element, i) => {
     element.addEventListener("click", (e) => {
       const numVol2 = document.getElementById("numVol2");
@@ -57,26 +58,25 @@ function saveupdate() {
     console.log(vols[i].hVoldepart);
     vols[i].hVolarrivee = document.getElementById("heureVolarrivee2").value;
     console.log(vols[i].hVolarrivee);
-    const numVols = vols[i].numVol;
-    const nbreSiege = vols[i].nbrSieges;
-    const typeAvions = vols[i].typeAvion;
-    const hVoldeparts = vols[i].hVoldepart;
-    const hVolarrivees = vols[i].hVolarrivee;
-    const aeroDepart = vols[i].departSelection;
-    const aeroArrivee = vols[i].arriveeSelection;
-    const updatedVol = {
-      numVols,
-      typeAvions,
-      nbreSiege,
-      aeroDepart,
-      aeroArrivee,
-      hVoldeparts,
-      hVolarrivees,
+    var numVol = vols[i].numVol;
+    var nbrSieges = vols[i].nbrSieges;
+    var typeAvion = vols[i].typeAvion;
+    var hVoldepart = vols[i].hVoldepart;
+    var hVolarrivee = vols[i].hVolarrivee;
+    var departSelection = vols[i].departSelection;
+    var arriveeSelection = vols[i].arriveeSelection;
+    var updatedVol = {
+      numVol,
+      typeAvion,
+      nbrSieges,
+      departSelection,
+      arriveeSelection,
+      hVoldepart,
+      hVolarrivee,
     };
     vols.splice(i, 1, updatedVol);
     localStorage.setItem("vols", JSON.stringify(vols));
+    affichVol();
   });
-  updateVol();
-  //replace with splice fonction
 }
 saveupdate();

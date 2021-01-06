@@ -30,6 +30,7 @@ ajoutVol.addEventListener("click", (e) => {
     departSelection,
     nbrSieges,
   };
+
   if (
     numVol == "" ||
     typeAvion == "" ||
@@ -37,13 +38,20 @@ ajoutVol.addEventListener("click", (e) => {
     hVolarrivee == "" ||
     arriveeSelection == "" ||
     departSelection == "" ||
-    nbrSieges == ""
+    nbrSieges == "" ||
+    hVoldepart >= hVolarrivee
   ) {
-    alert("merci de verifier la saisie de tous les champs");
+    alert("merci de verifier la date de retrour ou la saisie de tous les champs");
+  } else {
+    vols.push(vol);
+    localStorage.setItem("vols", JSON.stringify(vols));
   }
-
-  vols.push(vol);
-  localStorage.setItem("vols", JSON.stringify(vols));
   affichVol();
-
+  document.getElementById("numVol").value = "";
+  document.getElementById("typeavion").selectedIndex = "0";
+  document.getElementById("depart").selectedIndex = "0";
+  document.getElementById("nbreSieges").selectedIndex = "0";
+  document.getElementById("arrivee").selectedIndex = "0";
+  document.getElementById("heureVol").value = "";
+  document.getElementById("heureVolarrivee").value = "";
 });
