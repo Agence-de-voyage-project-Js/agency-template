@@ -25,7 +25,9 @@ boutton.addEventListener('click' , (e) =>{
       var date2 = new Date(hvolarrivee);
    
     console.log(departSelection)
-    var volFound = vols.filter(vol => (vol.departSelection === departSelection && vol.arriveeSelection === arriveeSelection ) )
-    console.log(volFound);
+    var volsFound = vols.filter(vol => (vol.departSelection === departSelection && vol.arriveeSelection === arriveeSelection ) )
+    localStorage.setItem("volsFound",JSON.stringify(volsFound))
+    location.href = "listFlight.html"
+    
 });
 // if (volFound !== undefined){}
