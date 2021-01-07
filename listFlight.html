@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lisFlight</title>
+</head>
+<body>
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10">
+          <table id="datatable" class="table table-bordered table-hover table-stripped table-responsive" >
+            <thead>
+                <tr>
+                    <th>N° Vol</th>
+                    <th>Date Départ</th>
+                    <th>Aéroport Départ</th>
+                    <th>Date Arrivée</th>
+                    <th>Aéroport Arrivée</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="vol">
+            </tbody>
+          </table>
+        </div>  
+      </div>
+      <script src="listFlight.js"></script>
+      <script>
+        $(document).ready( function () {
+            $('#datatable').DataTable();
+        } );
+  </script>
+</body>
+</html>
