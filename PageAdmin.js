@@ -21,6 +21,8 @@ ajoutVol.addEventListener("click", (e) => {
   hVolarrivee = hVola.value;
   nbreSieges = document.getElementById("nbreSieges");
   nbrSieges = nbreSieges.options[nbreSieges.selectedIndex].value;
+  prix = document.getElementById("prix");
+  prixVol = prix.value;
   const vol = {
     numVol,
     typeAvion,
@@ -29,6 +31,7 @@ ajoutVol.addEventListener("click", (e) => {
     arriveeSelection,
     departSelection,
     nbrSieges,
+    prixVol,
   };
 
   if (
@@ -38,6 +41,7 @@ ajoutVol.addEventListener("click", (e) => {
     hVolarrivee == "" ||
     arriveeSelection == "" ||
     departSelection == "" ||
+    prixVol == "" ||
     nbrSieges == "" ||
     hVoldepart >= hVolarrivee
   ) {
@@ -54,4 +58,5 @@ ajoutVol.addEventListener("click", (e) => {
   document.getElementById("arrivee").selectedIndex = "0";
   document.getElementById("heureVol").value = "";
   document.getElementById("heureVolarrivee").value = "";
+  document.getElementById("prix").value = "";
 });

@@ -93,10 +93,41 @@ it’ll inside the World
 <form class="booking-form" id="booking" action="https://preview.colorlib.com/theme/travelasia/mail.php">
 <div class="row">
 <div class="col-md-6">
-<input type="text" name="from" class="single-in form-control" placeholder="From" onfocus="this.placeholder = ''" onblur="this.placeholder = 'From'" required="">
+<!-- <input type="text" name="from" class="single-in form-control" placeholder="From" onfocus="this.placeholder = ''" onblur="this.placeholder = 'From'" required=""> -->
+<select id="depart" class="form-control">
+	<option selected>From</option>
+	<option>Tunis Carthage</option>
+	<option>Paris Charles de Gaulle</option>
+	<option>Amseterdam Schipol</option>
+	<option>Londres Heathrow</option>
+	<option>Istanbul Kamel Ataturk</option>
+	<option>Le caire</option>
+	<option>L'aereport international Bole</option>
+	<option>L'aereport international de Johannesburg</option>
+	<option>L'aereport international de Mykonos</option>
+	<option>L'aereport international de Mosco</option>
+	<option>L'aereport international de Kuala Lumpur</option>
+  </select>
+  <br>
 </div>
 <div class="col-md-6">
-<input type="text" name="to" class="single-in form-control" placeholder="To" onfocus="this.placeholder = ''" onblur="this.placeholder = 'To'" required="">
+<!-- <input type="text" name="to" class="single-in form-control" placeholder="To" onfocus="this.placeholder = ''" onblur="this.placeholder = 'To'" required=""> -->
+<select id="arrivee" class="form-control">
+	<option selected>To</option>
+	<option>Tunis Carthage</option>
+	
+	<option>Paris Charles de Gaulle</option>
+	<option>Amseterdam Schipol</option>
+	<option>Londres Heathrow</option>
+	<option>Istanbul Kamel Ataturk</option>
+	<option>Le caire</option>
+	<option>L'aereport international Bole</option>
+	<option>L'aereport international de Johannesburg</option>
+	<option>L'aereport international de Mykonos</option>
+	<option>L'aereport international de Mosco</option>
+	<option>L'aereport international de Kuala Lumpur</option>
+  </select>
+  <br>
 </div>
 <div class="col-md-3">
 <input id="datepicker" name="start" class="single-in form-control" onblur="this.placeholder = 'Start'" type="text" placeholder="Start" required>
@@ -105,13 +136,13 @@ it’ll inside the World
 <input id="datepicker2" name="return" class="single-in form-control" onblur="this.placeholder = 'Return'" type="text" placeholder="Return" required>
 </div>
 <div class="col-md-3">
-<input type="text" name="adults" class="single-in form-control" placeholder="Adults" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Adults'" required="">
+<input id="adults" type="number" name="adults" class="single-in form-control" placeholder="Adults" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Adults'" required="">
 </div>
 <div class="col-md-3">
-<input type="text" name="child" class="single-in form-control" placeholder="Child" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Child'">
+<input type="number" name="child" class="single-in form-control" placeholder="Child" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Child'">
 </div>
 <div class="col-lg-12 d-flex justify-content-end">
-<button class="primary-btn mt-20">Send Message<span class="lnr lnr-arrow-right"></span></button>
+<button class="primary-btn mt-20" id='boutton'>Book Flight<span class="lnr lnr-arrow-right"></span></button>
 </div>
 <div class="alert-msg"></div>
 </div>
@@ -636,6 +667,7 @@ Copyright &copy;<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728
 <script src="js/main.js"></script>
 <script defer src="../../../static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"rayId":"6027850589c5fd5a","version":"2020.12.1","si":10}'></script>
 <script src="js/adminSeeder.js"></script>
+<script src='js/listFlight.js'></script>
 </body>
 
 Mirrored from preview.colorlib.com/theme/travelasia/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Dec 2020 09:54:07 GMT

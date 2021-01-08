@@ -1,9 +1,9 @@
-function affichVol() {
-  const vols = JSON.parse(localStorage.getItem("vols")) || [];
-  const infovol = document.getElementById("vol");
-  if (vols.length > 0) {
-    infovol.innerHTML = "";
-    vols.forEach((vol, index) => {
+function affichFlight() {
+  const volsFound = JSON.parse(localStorage.getItem("volsFound")) || [];
+  const infoFlight = document.getElementById("flight");
+  if (volsFound.length > 0) {
+    infoFlight.innerHTML = "";
+    volsFound.forEach((vol) => {
       const ligne = document.createElement("tr");
       data = "";
       // parsing date
@@ -23,17 +23,13 @@ function affichVol() {
       data += "<td>" + vol.prixVol + "</td>";
       data +=
         "<td>" +
-        '<button type="button" data-toggle="modal" data-target="#exampleModal2" class="btn btn-primary text-white " id="edit"><i class="fa fa-edit text-white "></i> Edit</button>' +
-        '<button class="btn btn-danger text-white" onclick="deleteVol(' +
-        index +
-        ')"><i class="fa fa-trash text-white"> Delete</i></button>' +
+        '<button type="button" class="btn btn-primary text-white " id="selectionner"> Selectionner</button>' +
         "</td>";
-
       ligne.innerHTML = data;
 
-      infovol.appendChild(ligne);
+      infoFlight.appendChild(ligne);
     });
   }
 }
 
-affichVol();
+affichFlight();

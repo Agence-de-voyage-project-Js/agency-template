@@ -18,6 +18,8 @@ function updateVol() {
       hdepart2.value = vols[i].hVoldepart;
       const harrivee2 = document.getElementById("heureVolarrivee2");
       harrivee2.value = vols[i].hVolarrivee;
+      const prixVol2 = document.getElementById("prix2");
+      prixVol2.value = vols[i].prixVol;
       // save index
       const index2 = document.getElementById("index");
       index2.value = i;
@@ -58,6 +60,7 @@ function saveupdate() {
     console.log(vols[i].hVoldepart);
     vols[i].hVolarrivee = document.getElementById("heureVolarrivee2").value;
     console.log(vols[i].hVolarrivee);
+    vols[i].prixVol = document.getElementById("prix2").value;
     var numVol = vols[i].numVol;
     var nbrSieges = vols[i].nbrSieges;
     var typeAvion = vols[i].typeAvion;
@@ -65,6 +68,7 @@ function saveupdate() {
     var hVolarrivee = vols[i].hVolarrivee;
     var departSelection = vols[i].departSelection;
     var arriveeSelection = vols[i].arriveeSelection;
+    var prixVol = vols[i].prixVol;
     var updatedVol = {
       numVol,
       typeAvion,
@@ -73,6 +77,7 @@ function saveupdate() {
       arriveeSelection,
       hVoldepart,
       hVolarrivee,
+      prixVol,
     };
     vols.splice(i, 1, updatedVol);
     localStorage.setItem("vols", JSON.stringify(vols));
