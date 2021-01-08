@@ -4,5 +4,5 @@ function deleteOffer(index){
     localStorage.setItem("offers", JSON.stringify(offers));
 
     // re affiche de liste
-    affichOffer(); 
+    addOffers(); 
 }
