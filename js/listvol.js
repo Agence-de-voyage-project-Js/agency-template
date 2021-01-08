@@ -20,6 +20,7 @@ function affichVol() {
       data += "<td>" + vol.departSelection + "</td>";
       data += "<td>" + dateAr + "  " + timeAr + "</td>";
       data += "<td>" + vol.arriveeSelection + "</td>";
+      data += "<td>" + vol.prixVol + "</td>";
       data +=
         "<td>" +
         '<button type="button" data-toggle="modal" data-target="#exampleModal2" class="btn btn-primary text-white " id="edit"><i class="fa fa-edit text-white "></i> Edit</button>' +
