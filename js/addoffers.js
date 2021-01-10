@@ -79,80 +79,22 @@ function listOffers(){
             </div>
             <div class="card-body">
               <h5 class="card-title" style="text-align: center;" id="country1">${offer.country}</h5>
-              <p class="card-text" id="description1">${offer.description}</p>
-              <a  class="btn btn-primary primary-btn" id="edit" onclick = "editOffer()">Edit<span class="lnr lnr-arrow-right"></span></a>
-             
+              <p class="card-text " id="description1">${offer.description}</p>
+              <button  class="btn btn-primary primary-btn edit1997 " onclick="edit(${index})" data-toggle="modal" data-target="#modalEdit" >Edit<span class="lnr lnr-arrow-right" ></span></button>
               <a  class="btn btn-primary primary-btn" onclick = "deleteOffer()">Delete<span class="lnr lnr-arrow-right"></span></a>
             </div>
             
             </div>
         </div>
-        </div>`;
+        </div>
+        `;
+        
 
         card.innerHTML = html,
         cardList.appendChild(card);
 
 
     });
-}
-
-function editOffer(){
-    var offers = JSON.parse(localStorage.getItem('offers')) || [];
-    const edit = document.getElementById('edit');
-     edit.addEventListener('click', e =>{
-          const editModal =`
-          <div>
-          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">New Offer</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <form>
-                    <div class="form-group">
-                      <label for="recipient-name" class="col-form-label">Offer Duration:</label>
-                      <input type="text" class="form-control" id="date" placeholder="For ... To ...">
-                    </div>
-                    <div class="form-group">
-                      <label for="recipient-name" class="col-form-label">later Price:</label>
-                      <input type="text" class="form-control" id="lprice" placeholder="Later Price DT/Per">
-                    </div>
-                    <div class="form-group">
-                      <label for="recipient-name" class="col-form-label">New Price:</label>
-                      <input type="text" class="form-control" id="nprice" placeholder="New Price DT/Per">
-                    </div>
-                    <div class="form-group">
-                      <label for="recipient-name" class="col-form-label">Name of Country:</label>
-                      <input type="text" class="form-control" id="country" placeholder="Name of Country">
-                    </div>
-                    <div class="form-group">
-                      <label for="recipient-name" class="col-form-label">Description:</label>
-                      <textarea type="text" class="form-control" id="description" placeholder="Description"></textarea>
-                                    </div>
-                                    <div class="form-group">
-                                      <form>
-                                          <div class="form-group">
-                                            <label for="exampleFormControlFile1">Image of country</label>
-                                            <input type="file" class="form-control-file" id="image">
-                                          </div>
-                                        </form>
-                                    </div>
-                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap" id="button">Add Offer</button>
-                                  </form>
-      
-      
-                                </div>
-                              </div>
-                            </div>
-                  </div>
-              </div>
-          `
-     })
-
 }
 
 
