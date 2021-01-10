@@ -43,34 +43,48 @@ addFormNumber();
 
 function verifInfo() {
   const validForm = document.getElementById("validerForm");
-  // const coorUser = JSON.parse(localStorage.getItem("coorUser")) || [];
+  const coorUser = JSON.parse(localStorage.getItem("coorUser")) || [];
   validForm.addEventListener("click", (e) => {
     const nbrAdults = localStorage.getItem("nbresv");
 
-    const nom = document.querySelectorAll(".Noms");
-    const prenom = document.querySelectorAll(".prenoms");
+    const noms = document.querySelectorAll(".Noms");
+    const prenoms = document.querySelectorAll(".prenoms");
     const adress = document.querySelectorAll(".inputsAddress");
-    const email = document.querySelectorAll(".E-mails");
-    const tel = document.querySelectorAll(".num-tels");
+    const emails = document.querySelectorAll(".E-mails");
+    const tels = document.querySelectorAll(".num-tels");
 
     for (let i = 0; i < nbrAdults; i++) {
-      console.log(nom[i].value);
+      const nom = noms[i].value;
+      const prenom = prenoms[i].value;
+      const adres = adress[i].value;
+      const email = emails[i].value;
+      const tel = tels[i].value;
+      const user = {
+        nom,
+        prenom,
+        adres,
+        email,
+        tel,
+      };
       if (
-        nom[i].value == "" ||
-        prenom[i].value == "" ||
+        noms[i].value == "" ||
+        prenoms[i].value == "" ||
         adress[i].value == "" ||
-        email[i].value == "" ||
-        tel[i].value == ""
+        emails[i].value == "" ||
+        tels[i].value == ""
       ) {
         alert("merci de verifier la saisie de tous les champs");
-        nom[i].value = "";
-        prenom[i].value = "";
+        noms[i].value = "";
+        prenoms[i].value = "";
         adress[i].value = "";
-        email[i].value = "";
-        tel[i].value = "";
+        emails[i].value = "";
+        tels[i].value = "";
       } else {
-        // coorUser.push(corUser)
-        // JSON.parse(localStorage.setItem("coorUser",JSON.stringify(coorUser)))
+        coorUser.push(user);
+        console.log(coorUser);
+
+        localStorage.setItem("coorUser", JSON.stringify(coorUser));
+        location.href = "invoice.html";
       }
     }
   });
