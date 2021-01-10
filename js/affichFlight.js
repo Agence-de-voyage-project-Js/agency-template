@@ -45,8 +45,7 @@ function selectionVol() {
       if (connectedUser == "") {
         window.location.href = "login.html";
       } else {
-        var index = i;
-        console.log(volsFound[index]);
+        location.href = "validation.html";
       }
     });
   });
