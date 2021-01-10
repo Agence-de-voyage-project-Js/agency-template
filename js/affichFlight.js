@@ -33,3 +33,21 @@ function affichFlight() {
 }
 
 affichFlight();
+
+function selectionVol() {
+  var selections = document.querySelectorAll("#selectionner");
+  const connectedUser = JSON.parse(localStorage.getItem("connectedUser")) || "";
+  const volsFound = JSON.parse(localStorage.getItem("volsFound")) || "";
+  console.log(connectedUser);
+  selections.forEach((element, i) => {
+    element.addEventListener("click", (e) => {
+      e.preventDefault();
+      if (connectedUser == "") {
+        window.location.href = "login.html";
+      } else {
+        location.href = "validation.html";
+      }
+    });
+  });
+}
+selectionVol();
