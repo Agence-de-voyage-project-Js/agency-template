@@ -38,13 +38,17 @@ function selectionVol() {
   var selections = document.querySelectorAll("#selectionner");
   const connectedUser = JSON.parse(localStorage.getItem("connectedUser")) || "";
   const volsFound = JSON.parse(localStorage.getItem("volsFound")) || "";
-  console.log(connectedUser);
+  const volsSelection = JSON.parse(localStorage.getItem("volsSelection")) || [];
+
   selections.forEach((element, i) => {
     element.addEventListener("click", (e) => {
       e.preventDefault();
       if (connectedUser == "") {
         window.location.href = "login.html";
       } else {
+        const volSelect = volsFound[i];
+        volsSelection.push(volSelect);
+        localStorage.setItem("volsSelection", JSON.stringify(volsSelection));
         location.href = "validation.html";
       }
     });
